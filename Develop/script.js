@@ -42,26 +42,29 @@ function generatePassword() {
         var confirmUpperCase = window.confirm("Click OK if you would like to include uppercase letters.");
       }
 
-  var numericCharacters = []
-  var specialCharacters = []
-  var lowerCharacters = []
-  var upperCharacters = []
+  var numericCharacters = ""
+  var specialCharacters = ""
+  var lowerCharacters = ""
+  var upperCharacters = ""
 
+
+      //set if statements for when the user wants to use numbers, special characters, lowercase or uppercase letters  
 
       if (confirmNumericCharacter) {
-        numericCharacters = number[Math.floor(Math.random() * number.length) + 1];
+        // this will select a random element inside of the number variable
+        numericCharacters = number[Math.floor(Math.random() * number.length)];
       }
 
       if (confirmSpecialCharacter) {
-        specialCharacters = specialChar[Math.floor(Math.random() * specialChar.length) + 1];
+        specialCharacters = specialChar[Math.floor(Math.random() * specialChar.length)];
       }
 
       if (confirmLowerCase) {
-        lowerCharacters = lower[Math.floor(Math.random() * lower.length) + 1];
+        lowerCharacters = lower[Math.floor(Math.random() * lower.length)];
       }
 
       if (confirmUpperCase) {
-        upperCharacters = upper[Math.floor(Math.random() * upper.length) + 1];
+        upperCharacters = upper[Math.floor(Math.random() * upper.length)];
       }
 
   var passwordCharacters = numericCharacters + specialCharacters + lowerCharacters + upperCharacters
@@ -69,7 +72,9 @@ function generatePassword() {
       console.log(passwordCharacters);
 
       var yourPassword = ""
-
+      
+      // i equals 0 at the beginning of the for loop, i < array.length as long as i is less than array length and we continue looping
+      //after each loop we increment by 1
       for (var i = 0; i < confirmLength; i++) {
         yourPassword = yourPassword + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
         console.log(yourPassword)
