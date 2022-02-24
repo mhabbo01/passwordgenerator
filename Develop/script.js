@@ -39,41 +39,42 @@ function generatePassword() {
       
       //set if statements for when the user wants to use numbers, special characters, lowercase or uppercase letters  
 
-   
-
-    for (var i = 0; i < confirmLength; i++) {
-
       var numericCharacters = ""
       var specialCharacters = ""
       var lowerCharacters = ""
       var upperCharacters = ""
+      var yourPassword = ""
 
+    for (var i = 0; i < confirmLength; i++) {
+
+      
+      // we currently have "" as the values to the vars above, if we use += below this will add to those values (or to the string) and will combine the characters the user would like
       if (confirmNumericCharacter) {
-        // this will select a random element inside of the number variable
-        numericCharacters = number[Math.floor(Math.random() * number.length)];
+        // this will select a random character inside of the number variable designated above and so on below.
+        numericCharacters += number[Math.floor(Math.random() * number.length)];
       }
 
       if (confirmSpecialCharacter) {
-        specialCharacters = specialChar[Math.floor(Math.random() * specialChar.length)];
+        specialCharacters += specialChar[Math.floor(Math.random() * specialChar.length)];
       }
 
       if (confirmLowerCase) {
-        lowerCharacters = lower[Math.floor(Math.random() * lower.length)];
+        lowerCharacters += lower[Math.floor(Math.random() * lower.length)];
       }
 
       if (confirmUpperCase) {
-        upperCharacters = upper[Math.floor(Math.random() * upper.length)];
+        upperCharacters += upper[Math.floor(Math.random() * upper.length)];
       }
+
+      // we set a variable below to house the characters chosen above
     
       var passwordCharacters = numericCharacters + specialCharacters + lowerCharacters + upperCharacters
-      var yourPassword = ""
-    
-      yourPassword = passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
+
+      yourPassword = yourPassword + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
       console.log(yourPassword)
-       
-    }
+      } 
+
       return yourPassword;
-    
   
 }
 
