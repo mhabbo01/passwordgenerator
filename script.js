@@ -8,16 +8,16 @@ var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n
 var upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
 
-//we need to confirm how many characters the user would like in their password we need between 12 and 128
+//we need to confirm how many characters the user would like in their password we need between 8 and 128
 function generatePassword() {
-  var confirmLength = window.prompt("How many characters would you like your password to contain?  Must be between 12 and 128 characters.");
+  var confirmLength = window.prompt("How many characters would you like your password to contain?  Must be between 8 and 128 characters.");
   confirmLength = parseInt(confirmLength);
 
   //loop this is the answer is not within the given parameters, you can use a loop or if statements.
-  while (confirmLength <=11 || confirmLength >= 129) {
-    window.alert("Password length must be between 12 and 128 characters. Please try again");
+  while (confirmLength <=7 || confirmLength >= 129) {
+    window.alert("Password length must be between 8 and 128 characters. Please try again");
     //repeat prompt to confirm length
-    var confirmLength = window.prompt("How many characters would you like your password to contain?  Must be between 12 and 128 characters.");
+    var confirmLength = window.prompt("How many characters would you like your password to contain?  Must be between 8 and 128 characters.");
   }
   //letting our user know how many characters long this will be 
     window.alert("Your password will be " + confirmLength + " characters long.");
