@@ -12,6 +12,9 @@ I WANT to randomly generate a password that meets certain criteria
 SO THAT I can create a strong password that provides greater security
 ```
 
+## Live Link
+https://mhabbo01.github.io/passwordgenerator/
+
 ## Acceptance Criteria
 
 ```
